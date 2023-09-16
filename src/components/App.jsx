@@ -33,9 +33,8 @@ export const App = () => {
     );
     if (doesAlreadyExist) {
       return alert(`${name} is already in contacts`);
-    } else {
-      setContacts([...contacts, { name: name, number: number, id: nanoid() }]);
     }
+    setContacts([...contacts, { name: name, number: number, id: nanoid() }]);
   };
 
   const handleDeleteContact = id => {

@@ -40,7 +40,8 @@ export const ContactForm = ({ onSubmit }) => {
         name="name"
         value={name}
         onChange={handleNameChange}
-        id={loginInputId}
+        id="name"
+        htmlFor={loginInputId}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
@@ -52,9 +53,10 @@ export const ContactForm = ({ onSubmit }) => {
         className={css.form__input}
         type="tel"
         name="number"
+        id="number"
         value={number}
         onChange={handleNumberChange}
-        id={numberInputId}
+        htmlFor={numberInputId}
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required

@@ -20,6 +20,12 @@ export const ContactList = ({ contacts, onContactDelete }) => (
 );
 
 ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.object),
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
   onContactDelete: PropTypes.func.isRequired,
 };
