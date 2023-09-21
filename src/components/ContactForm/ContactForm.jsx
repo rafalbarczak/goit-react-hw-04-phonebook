@@ -1,14 +1,10 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
 export const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
-  const loginInputId = nanoid();
-  const numberInputId = nanoid();
 
   const handleNameChange = e => {
     setName(e.target.value);
@@ -40,7 +36,7 @@ export const ContactForm = ({ onSubmit }) => {
         name="name"
         value={name}
         onChange={handleNameChange}
-        id={loginInputId}
+        id="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
@@ -52,7 +48,7 @@ export const ContactForm = ({ onSubmit }) => {
         className={css.form__input}
         type="tel"
         name="number"
-        id={numberInputId}
+        id="number"
         value={number}
         onChange={handleNumberChange}
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
